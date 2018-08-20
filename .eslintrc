@@ -1,0 +1,18 @@
+{
+  "extends": [
+    "plugin:ramda/recommended",
+    "./node_modules/@scorum/theme-bootstrap/.eslintrc"
+  ],
+  "settings": {
+    "import/resolver": {
+      "babel-module": {
+        "theme": "@scorum/theme-bootstrap/src",
+        "modules": "./node_modules",
+        "models": "src/models"
+      }
+    }
+  },
+  "plugins": [
+    "ramda"
+  ]
+}

@@ -1,0 +1,25 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<IfElse /> when children length is more than 2 should ignore 3,4,5... elements 1`] = `
+<span
+  key=".1"
+>
+  second
+</span>
+`;
+
+exports[`<IfElse /> when condition is false should render second element 1`] = `
+<span
+  key=".1"
+>
+  second
+</span>
+`;
+
+exports[`<IfElse /> when condition is true should render first element 1`] = `
+<span
+  key=".0"
+>
+  first
+</span>
+`;

@@ -1,8 +1,22 @@
 {
   "presets": [
     "react",
-    "es2015",
-    "stage-1"
+    ["env", {
+      "modules": false
+    }]
   ],
-  "plugins": ["transform-decorators-legacy" /* should always be the first plugin! */]
+  "plugins": [
+    "transform-decorators-legacy",
+    "transform-class-properties",
+    "transform-object-rest-spread",
+    "ramda",
+    ["module-resolver", {
+      "root": ["./"],
+      "alias": {
+        "theme": "@scorum/theme-bootstrap/src",
+        "modules": "./node_modules",
+        "models": "./src/models"
+      }
+    }]
+  ]
 }
