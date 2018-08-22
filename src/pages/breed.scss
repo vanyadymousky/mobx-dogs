@@ -1,0 +1,23 @@
+.breed {
+  .breed-photos {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: $grid-gutter-width;
+
+    @include media-breakpoint-up(md) {
+      grid-template-columns: 1fr 1fr 1fr;
+    }
+
+    @include media-breakpoint-up(lg) {
+      grid-template-columns: 1fr 1fr 1fr 1fr;
+    }
+
+    .breed-photo {
+      background-color: $gray-dark-hint;
+      background-size: cover;
+      background-position: center center;
+      height: 300px;
+      box-shadow: 0px 2px 15px $gray-dark-hint;
+    }
+  }
+}

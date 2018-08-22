@@ -8,7 +8,8 @@
       "babel-module": {
         "theme": "@scorum/theme-bootstrap/src",
         "modules": "./node_modules",
-        "models": "src/models"
+        "models": "src/models",
+        "helpers": "./src/helpers"
       }
     }
   },

@@ -1,0 +1,22 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`breeds store should add items 1`] = `
+Object {
+  "images": Object {},
+  "inProgress": true,
+  "items": Array [
+    Object {
+      "name": "testme",
+      "subbreeds": Array [],
+    },
+  ],
+}
+`;
+
+exports[`breeds store should be default from scratch 1`] = `
+Object {
+  "images": Object {},
+  "inProgress": false,
+  "items": Array [],
+}
+`;

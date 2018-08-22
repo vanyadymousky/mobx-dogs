@@ -1,6 +1,5 @@
 import { IfElse } from './if-else';
 
-
 describe('<IfElse />', () => {
   let wrapper;
 

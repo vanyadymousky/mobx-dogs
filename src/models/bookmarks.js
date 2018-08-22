@@ -1,7 +1,6 @@
-import { compose, prop, last, find, allPass, propEq, values } from 'ramda';
-import { observable } from 'mobx';
-
-const getLastId = compose(prop('id'), last);
+import { complement, find, values } from 'ramda';
+import { observable, action, reaction } from 'mobx';
+import { findByTypePayload, getLastId } from '../helpers/bookmarks';
 
 const createBookmark = (id, type, payload) => observable({
   id,
@@ -23,10 +22,19 @@ export const bookmarksStore = observable({
       this.items.push(createBookmark(this.lastId + 1, ...values(bookmark)));
     }
   },
+  removeBookmark({ type, payload }) {
+    this.items = this.items.filter(complement(findByTypePayload(type, payload)));
+  },
   // Bookmark was already added?
   isAdded({ type, payload }) {
-    return !!find(allPass([propEq('type', type), propEq('payload', payload)]), this.items);
+    return !!find(findByTypePayload(type, payload), this.items);
   },
+}, {
+  addBookmark: action,
+  removeBookmark: action,
 });
+
+reaction(() => bookmarksStore.lastId, lastId => console.log('reaction goes, ', lastId));
+// will not get triggered if items[0].payload is changed for example
 
 // autorun(() => console.log(bookmarksStore.items));

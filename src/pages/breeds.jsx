@@ -2,14 +2,14 @@ import React from 'react';
 import { map, isEmpty } from 'ramda';
 import { observer } from 'mobx-react';
 import { breedsStore } from 'models/breeds';
-import { Link } from 'react-router-dom';
 import { IfElse } from '../components/helpers/if-else';
+import { StateLink } from '../components/state-link/state-link';
 
 const renderBreeds = map(({ name }) => (
   <li key={name}>
-    <Link to={`breed/${name}`} href={`breed/${name}`}>
+    <StateLink to={`breed/${name}`}>
       {name}
-    </Link>
+    </StateLink>
   </li>
 ));
 
